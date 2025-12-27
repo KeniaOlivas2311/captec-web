@@ -1,0 +1,345 @@
+/* ADMIN STYLES (panel) */
+
+.admin-login-body {
+  background: #050506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.admin-login-box {
+  background: #111;
+  padding: 28px;
+  border-radius: 12px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.admin-login-box h2 {
+  margin-bottom: 18px;
+  color: #00aaff;
+}
+
+.admin-login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 9px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #0f0f10;
+  color: #fff;
+}
+
+.admin-login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #00aaff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Admin panel */
+
+.admin-panel-body {
+  background: #060607;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.admin-title {
+  color: #00aaff;
+  margin: 0;
+}
+
+.admin-logout {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Form area */
+.admin-form {
+  background: #0f0f10;
+  padding: 18px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-form input[type="text"],
+.admin-form textarea {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical;
+  min-height: 44px;
+}
+
+.admin-form textarea {
+  min-height: 100px;
+}
+
+.admin-form input[type="file"] {
+  background: transparent;
+  color: #fff;
+}
+
+/* Buttons */
+#guardarBtn, #limpiarBtn {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #0054a6;
+  color: white;
+  cursor: pointer;
+}
+
+#limpiarBtn {
+  background: #666;
+}
+
+/* Novedades list */
+.novedades-admin-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.novedad-admin-card {
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 12px;
+  align-items: start;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.novedad-admin-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.novedad-admin-card h3 {
+  color: #00aaff;
+  margin: 0 0 6px 0;
+}
+
+.novedad-admin-card p {
+  color: #d0d0d0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.novedad-admin-card .card-actions {
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+
+.novedad-admin-card .card-actions button {
+  padding:8px 10px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+}
+
+.edit-btn { background:#00aaff; color:#fff; }
+.del-btn { background:#ff5a5a; color:#fff; }
+
+/* Responsive */
+@media (max-width:800px) {
+  .novedad-admin-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: #1b1b1b;
+    border-radius: 10px;
+  }
+
+  #guardarCurso {
+    background: #0a84ff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+.servicios-admin {
+  margin-top: 30px;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.tabla-servicios {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.tabla-servicios th,
+.tabla-servicios td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.tabla-servicios th {
+  color: #00aaff;
+  font-weight: 600;
+}
+
+.tabla-servicios button {
+  background: #007bff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.tabla-servicios button:hover {
+  background: #005fcc;
+}
+ 
+.form-editar-servicio {
+  margin-top: 25px;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.form-editar-servicio input,
+.form-editar-servicio textarea {
+  background: #000;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.form-editar-servicio button {
+  grid-column: span 2;
+  background: #00aaff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+.titulo-editar {
+  margin-top: 30px;
+  color: #00aaff;
+  font-size: 1.3rem;
+}
+
+.editar-servicio-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.15);
+  max-width: 900px;
+}
+
+
+
+.btn-guardar-servicio {
+  grid-column: span 2;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00aaff, #0077cc);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-guardar-servicio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,170,255,0.4);
+}
+
+
+
+.separador {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #00aaff, transparent);
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.editar-servicio-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+.editar-servicio-card textarea {
+  grid-column: span 2;
+  min-height: 90px;
+}
+.editar-servicio-card label {
+  grid-column: span 2;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+.editar-servicio-card input,
+.editar-servicio-card textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1c1c1c;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.editar-servicio-card input:focus,
+.editar-servicio-card textarea:focus {
+  outline: none;
+  border-color: #00aaff;
+  box-shadow: 0 0 0 2px rgba(0,170,255,0.2);
+}
+

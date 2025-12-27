@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captec Electromecánica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"> <img src="assets/img/logo.jpeg" alt="Captec Electromecánica" style="height: 45px;">⚡ Captec Electromecánica </div>
+    <nav class="nav">
+      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#novedades">Novedades</a>
+      <a href="login.html" id="btnLoginHeader">Iniciar sesión</a>
+    </nav>
+
+    <!-- Botón cerrar sesión (invisible por defecto) -->
+<button id="btnLogoutHeader" style="display:none; padding:6px 12px; border-radius:6px; border:none; background:#ff5a5a; color:white; cursor:pointer;">Cerrar sesión</button>
+  </header>
+
+  <!-- CARRUSEL PREMIUM -->
+<section class="carrusel">
+  <div class="slides">
+    <div class="slide active"><img src="assets/img/excelbasico.jpeg" alt="Excel Básico"></div>
+    <div class="slide"><img src="assets/img/control.jpeg" alt="Control"></div>
+    <div class="slide"><img src="assets/img/controlelec.jpeg" alt="Control Eléctrico"></div>
+    <div class="slide"><img src="assets/img/elec.jpeg" alt="Electricidad"></div>
+    <div class="slide"><img src="assets/img/electr.jpeg" alt="Electrónica"></div>
+    <div class="slide"><img src="assets/img/excelbas.jpeg" alt="Excel Básico"></div>
+    <div class="slide"><img src="assets/img/excelinter.jpeg" alt="Excel Intermedio"></div>
+    <div class="slide"><img src="assets/img/manejo.jpeg" alt="Manejo Seguro"></div>
+    <div class="slide"><img src="assets/img/mant.jpeg" alt="Mantenimiento"></div>
+    <div class="slide"><img src="assets/img/paneles.jpeg" alt="Paneles Solares"></div>
+    <div class="slide"><img src="assets/img/prepa.jpeg" alt="Preparatoria"></div>
+    <div class="slide"><img src="assets/img/refri.jpeg" alt="Refrigeración"></div>
+    <div class="slide"><img src="assets/img/refrig.jpeg" alt="Refrigeración 2"></div>
+    <div class="slide"><img src="assets/img/sold.jpeg" alt="Soldadura"></div>
+    <div class="slide"><img src="assets/img/soldadura.jpeg" alt="Curso de Soldadura"></div>
+    <div class="slide"><img src="assets/img/tecnico.jpeg" alt="Técnico"></div>
+  </div>
+
+  <!-- Flechas -->
+  <div class="carrusel-controles">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+
+  <!-- Indicadores -->
+  <div class="indicadores"></div>
+</section>
+
+  <section id="quienes-somos" class="section">
+  <h2 class="section-title">Quiénes Somos</h2>
+  <p class="section-text">
+    Captec Juárez es una escuela de capacitaciones para el trabajo y preparatoria abierta, 
+    con más de 8 años de experiencia. Somos la única institución en Ciudad Juárez que ofrece 
+    la certificación SEP CONOCER en Electromecánica Industrial.
+  </p>
+
+  <!-- Imagen del plantel -->
+  <div class="plantel-container">
+    <img src="assets/img/plantel.jpeg" alt="Plantel Captec Juárez" class="plantel-img" />
+  </div>
+</section>
+
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section dark">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card servicio-item" data-index="0"><i class="ri-settings-5-line"></i><p>Certificación en Electromecánica Industrial</p></div>
+      <div class="card servicio-item" data-index="1"><i class="ri-settings-5-line"></i><p>Preparatoria Abierta</p></div>
+      <div class="card servicio-item" data-index="2"><i class="ri-settings-5-line"></i></i><p>Curso de Montacargas</p></div>
+      <div class="card servicio-item" data-index="3"><i class="ri-settings-5-line"></i></i><p>Instalación de Paneles Solares</p></div>
+      <div class="card servicio-item" data-index="4"><i class="ri-settings-5-line"></i></i><p>Diplomados</p></div>
+    </div>
+  </section>
+
+  <!-- MODAL SERVICIOS PREMIUM -->
+<div id="modal-servicio" class="modal-servicio">
+  <div class="modal-servicio-content">
+    <button class="close-servicio">&times;</button>
+    <div class="modal-servicio-body">
+      <div class="modal-servicio-img-container">
+        <img id="modal-servicio-img" src="" alt="Imagen del servicio">
+      </div>
+      <div class="modal-servicio-info">
+        <h3 id="modal-servicio-titulo"></h3>
+        <p id="modal-servicio-descripcion"></p>
+        <p><strong>Costo:</strong> <span id="modal-servicio-costo"></span></p>
+        <p><strong>Fecha de inicio:</strong> <span id="modal-servicio-fecha"></span></p>
+        <p><strong>Duración:</strong> <span id="modal-servicio-duracion"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- CURSOS -->
+  <section id="cursos" class="section">
+    <h2>Catálogo de Cursos</h2>
+    <div class="catalogo">
+      <div class="curso-card">
+        <img src="assets/img/elec.jpeg" alt="Electricidad Industrial">
+        <h3>Electricidad Industrial</h3>
+        <p>Aprende técnicas modernas en instalaciones eléctricas industriales.</p>
+      </div>
+      <div class="curso-card">
+        <img src="assets/img/control.jpeg" alt="Automatización y PLC">
+        <h3>Automatización y PLC</h3>
+        <p>Maneja controladores lógicos programables y procesos automáticos.</p>
+      </div>
+      <div class="curso-card">
+        <img src="assets/img/mant.jpeg" alt="Mantenimiento Preventivo">
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Evita fallos en maquinaria con prácticas de mantenimiento efectivas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE CURSOS -->
+<div id="modal-curso" class="modal-curso">
+  <div class="modal-curso-content">
+    <span class="close-curso">&times;</span>
+    <img id="modal-curso-img" src="" alt="Imagen del curso">
+    <h3 id="modal-curso-titulo"></h3>
+    <p id="modal-curso-descripcion"></p>
+    <p><strong>Costo:</strong> <span id="modal-curso-costo"></span></p>
+    <p><strong>Fecha de inicio:</strong> <span id="modal-curso-fecha"></span></p>
+    <p><strong>Duración:</strong> <span id="modal-curso-duracion"></span></p>
+  </div>
+</div>
+
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="section dark">
+    <h2>Mapa y Direcciones</h2>
+   <div class="map-container">
+  <iframe 
+      src="https://www.google.com/maps?q=Hacienda+Del+Portal+10120,+Hacienda+De+Las+Torres,+Ciudad+Juárez,+32695&output=embed" 
+      width="100%" 
+      height="400" 
+      style="border:0; border-radius:20px; filter: contrast(120%) brightness(90%);" 
+      allowfullscreen="" 
+      loading="lazy">
+  </iframe>
+</div>
+
+
+  </section>
+
+  <!-- CONTACTO -->
+ <section id="contacto" class="section">
+  <h2>Contacto</h2>
+
+  <div class="contact-icons">
+
+    <a href="https://wa.me/526566439397" target="_blank" class="contact-item">
+      <i class="ri-whatsapp-fill"></i>
+      <span>WhatsApp</span>
+    </a>
+
+    <a href="https://www.facebook.com/share/1AStzcGLdr/" target="_blank" class="contact-item">
+      <i class="ri-facebook-circle-fill"></i>
+      <span>Facebook</span>
+    </a>
+
+    <a href="https://www.instagram.com/captecjuarez?igsh=MWxldnY0eHR6YmJsZQ==" target="_blank" class="contact-item">
+      <i class="ri-instagram-fill"></i>
+      <span>Instagram</span>
+    </a>
+
+    <a href="tel:6569375710" class="contact-item">
+      <i class="ri-phone-fill"></i>
+      <span>Llamar</span>
+    </a>
+
+  </div>
+</section>
+
+
+  <!-- CHATBOT PROFESIONAL -->
+<div id="openChat">💬</div>
+
+<div id="chatWindow" style="display:none;">
+  <div class="chat-header">
+    <img src="assets/img/logo.jpeg" />
+    CAPTEC Assistant
+  </div>
+
+  <div id="messages"></div>
+
+  <div class="chat-input">
+    <input id="userInput" type="text" placeholder="Escribe un mensaje..." />
+    <button id="sendBtn">Enviar</button>
+  </div>
+</div>
+
+
+<!-- NOVEDADES / NOTICIAS -->
+<section id="novedades" class="section dark">
+  <h2 class="section-title">Novedades Captec</h2>
+
+  <div class="novedades-container">
+
+    <!-- Las tarjetas se van a llenar después mediante el panel admin -->
+    <p class="no-novedades">No hay novedades por el momento. 📢</p>
+
+  </div>
+</section>
+
+<script>
+const contenedor = document.querySelector(".novedades-container");
+const novedades = JSON.parse(localStorage.getItem("novedades_captec")) || [];
+
+contenedor.innerHTML = novedades.length === 0 
+  ? '<p class="no-novedades">No hay novedades por el momento. 📢</p>'
+  : novedades.map(nov => `
+      <div class="novedad-card">
+        <img src="${nov.img}" alt="${nov.titulo}">
+        <h3>${nov.titulo}</h3>
+        <p>${nov.descripcion}</p>
+      </div>
+    `).join('');
+</script>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Captec Electromecánica | Todos los derechos reservados</p>
+  </footer>
+
+<script src="scripts.js"></script>
+
+<script>
+// ======================================
+// Cargar información del curso guardado
+// ======================================
+const curso = JSON.parse(localStorage.getItem("curso_captec"));
+
+if (curso) {
+  // Insertar información del curso en el modal
+  document.getElementById("modal-servicio-img").src = curso.imagen;
+  document.getElementById("modal-servicio-titulo").textContent = curso.nombre;
+  document.getElementById("modal-servicio-descripcion").textContent = curso.descripcion;
+  document.getElementById("modal-servicio-costo").textContent = "$" + curso.precio;
+  document.getElementById("modal-servicio-fecha").textContent = curso.fecha;
+  document.getElementById("modal-servicio-duracion").textContent = curso.duracion;
+}
+</script>
+
+
+
+
+<script>
+const btnLoginHeader = document.getElementById("btnLoginHeader");
+const btnLogoutHeader = document.getElementById("btnLogoutHeader");
+
+// --- ESTADO INICIAL ---
+// Si el admin YA inició sesión
+if (localStorage.getItem("captec_admin_auth") === "true") {
+  btnLoginHeader.style.display = "none";      // ocultar "Iniciar sesión"
+  btnLogoutHeader.style.display = "inline-block"; // mostrar "Cerrar sesión"
+} else {
+  btnLoginHeader.style.display = "inline-block"; 
+  btnLogoutHeader.style.display = "none";
+}
+
+// --- CERRAR SESIÓN ---
+btnLogoutHeader.addEventListener("click", () => {
+  const salir = confirm("¿Cerrar sesión de administrador?");
+  if (salir) {
+    // eliminar sesión
+    localStorage.removeItem("captec_admin_auth");
+
+    // redirigir al index
+    window.location.href = "index.html";
+  }
+});
+</script>
+
+
+
+<div id="contenedor-cursos"></div>
+
+<script src="cursos.js"></script>
+
+  <!-- otros scripts que ya tengas -->
+  <script src="js/script.js"></script> <!-- si tienes -->
+
+  <!-- 👇 ESTE SCRIPT VA AQUÍ 👇 -->
+  <script>
+    const cursosIniciales = [
+      {
+        id: 1,
+        nombre: "Electricidad Industrial",
+        descripcion: "Curso de electricidad industrial básica y avanzada",
+        precio: "1800",
+        fecha: "2026-02-23",
+        duracion: "4",
+        imagen: ""
+      },
+      {
+        id: 2,
+        nombre: "Computación",
+        descripcion: "Curso básico de computación",
+        precio: "1800",
+        fecha: "2026-03-01",
+        duracion: "6",
+        imagen: ""
+      },
+      {
+        id: 3,
+        nombre: "Mantenimiento Industrial",
+        descripcion: "Mantenimiento preventivo y correctivo",
+        precio: "2000",
+        fecha: "2026-04-01",
+        duracion: "5",
+        imagen: ""
+      }
+    ];
+
+    // ⚠️ SOLO SE EJECUTA UNA VEZ
+    if (!localStorage.getItem("captec_cursos")) {
+      localStorage.setItem("captec_cursos", JSON.stringify(cursosIniciales));
+    }
+  </script>
+</body>
+</html>
+
+
+</body>
+</html>

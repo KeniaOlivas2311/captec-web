@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Administrador | Captec</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-panel-body">
+    <header
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 18px 20px;
+      "
+    >
+      <h1 class="admin-title">Panel de Novedades - Captec</h1>
+      <div style="display: flex; gap: 12px; align-items: center">
+        <button id="btnLogout" class="admin-logout">Cerrar sesión</button>
+      </div>
+    </header>
+    <main style="max-width: 1100px; margin: 20px auto; padding: 10px">
+      <section class="admin-form">
+        <input id="titulo" type="text" placeholder="Título de la novedad" />
+        <textarea
+          id="descripcion"
+          placeholder="Descripción (máx 300 caracteres)"
+        ></textarea>
+        <div
+          style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"
+        >
+          <input id="imagen" type="file" accept="image/*" />
+          <div
+            id="previewWrapper"
+            style="
+              width: 140px;
+              height: 100px;
+              background: #222;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 8px;
+              overflow: hidden;
+            "
+          >
+            <span style="color: #999; font-size: 0.9rem">Vista previa</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px">
+          <button id="guardarBtn">Guardar Novedad</button>
+          <button id="limpiarBtn" style="background: #777">Limpiar</button>
+        </div>
+      </section>
+      <h2 class="admin-subtitle">Novedades Publicadas</h2>
+      <div id="lista-novedades" class="novedades-admin-list"></div>
+      <h2 class="admin-subtitle" style="margin-top: 40px">
+      
+    </main>
+----------------
+
+
+
+    <script>
+      function convertirABase64(file) {
+  return new Promise((resolve, reject) => {
+    const lector = new FileReader();
+    lector.readAsDataURL(file);
+    lector.onload = () => resolve(lector.result);
+    lector.onerror = error => reject(error);
+  });
+}
+    </script>
+    <div class="separador"></div>
+    <h2 class="admin-subtitle" style="margin-top: 40px">Servicios</h2>
+    <table class="tabla-servicios">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="lista-servicios-admin"></tbody>
+    </table>
+    <!-- MODAL EDITAR SERVICIO -->
+    <div id="modal-editar-servicio" class="modal-servicio-admin">
+      <div class="modal-servicio-admin-content">
+        <button id="cerrar-editar-servicio">&times;</button>
+        <h3 class="titulo-editar">Editar Servicio</h3>
+        <div class="editar-servicio-card">
+          <label>Nombre:</label> <input type="text" id="serv-nombre" />
+          <label>Descripción:</label>
+          <textarea id="serv-descripcion"></textarea> <label>Costo:</label>
+          <input type="text" id="serv-costo" /> <label>Fecha de inicio:</label>
+          <input type="date" id="serv-fecha" /> <label>Duración:</label>
+          <input type="text" id="serv-duracion" /> <label>Imagen:</label>
+          <input type="file" id="serv-imagen" accept="image/*" />
+          <div class="separador"></div>
+         <button id="guardar-servicio" class="btn-guardar-servicio">
+  Guardar Servicio
+</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="admin.js"></script>
+    
+  </body>
+</html>
