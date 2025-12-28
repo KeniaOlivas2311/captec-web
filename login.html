@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Captec</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body autocomplete="off" style="display:flex; justify-content:center; align-items:center; height:100vh; background:#111; color:white;">
+
+  <div style="background:#222; padding:30px; border-radius:10px; width:320px;">
+    <h2 style="text-align:center; margin-bottom:20px;">Iniciar Sesión</h2>
+
+    <label>Usuario</label>
+    <input id="user" type="text" placeholder="Escribe usuario" autocomplete="off" style="width:100%; padding:10px; margin:5px 0 15px;">
+
+    <label>Contraseña</label>
+    <input id="pass" type="password" placeholder="Escribe contraseña" autocomplete="off" style="width:100%; padding:10px; margin:5px 0 15px;">
+
+    <p id="login-error" style="color:#ff4646; height:18px; font-size:0.9rem;"></p>
+
+    <button id="btnLogin" style="width:100%; padding:10px; background:#0a84ff; border:none; border-radius:5px; color:white; cursor:pointer;">
+      Entrar
+    </button>
+
+    <button id="btnRegresar" class="logout-btn btn-center">⬅ Regresar al inicio</button>
+
+
+  </div>
+
+
+  <!-- ========================= -->
+  <!-- LÓGICA DE LOGIN -->
+  <!-- ========================= -->
+  <script>
+    const usuarioCorrecto = "admin";
+    const passwordCorrecto = "captecjuarez";
+
+    // BOTÓN LOGIN
+    document.getElementById("btnLogin").addEventListener("click", () => {
+      const user = document.getElementById("user").value.trim();
+      const pass = document.getElementById("pass").value.trim();
+
+      if (user === usuarioCorrecto && pass === passwordCorrecto) {
+        localStorage.setItem("captec_admin_auth", "true");
+        window.location.href = "admin.html";
+      } else {
+        document.getElementById("login-error").textContent =
+          "Usuario o contraseña incorrectos.";
+      }
+    });
+
+    // ENTER para enviar
+    ["user", "pass"].forEach(id => {
+      document.getElementById(id).addEventListener("keypress", (e) => {
+        if (e.key === "Enter") document.getElementById("btnLogin").click();
+      });
+    });
+
+    // SI YA ESTÁ LOGUEADO → ENTRAR DIRECTO AL ADMIN
+    if (localStorage.getItem("captec_admin_auth") === "true") {
+      window.location.href = "admin.html";
+    }
+
+
+document.getElementById("btnRegresar").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
+  </script>
+
+</body>
+</html>
